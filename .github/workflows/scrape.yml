@@ -1,0 +1,47 @@
+name: Scrape
+
+# Hourly snapshot of every provider, committed to data/v1/. git is the
+# historical database: each commit is a timestamped snapshot.
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+# Never let two runs push at once.
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run the pipeline
+        # Exits non-zero (leaving latest.json untouched) if every provider
+        # fails, which fails the job — a visible signal, not a silent overwrite.
+        run: uv run python -m cotizaciones_uy
+
+      - name: Commit updated dataset
+        run: |
+          if git diff --quiet -- data/v1; then
+            echo "No changes to data/v1; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v1
+          git commit -m "chore(data): update rates ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git push
