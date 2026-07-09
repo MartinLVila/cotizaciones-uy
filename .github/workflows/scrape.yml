@@ -31,7 +31,7 @@ jobs:
 
       - name: Run the pipeline
         # Exits non-zero (leaving latest.json untouched) if every provider
-        # fails, which fails the job — a visible signal, not a silent overwrite.
+        # fails, which fails the job: a visible signal, not a silent overwrite.
         run: uv run python -m cotizaciones_uy
 
       - name: Commit updated dataset

@@ -61,7 +61,7 @@ def build_payload(
 def dump_json(payload: dict[str, Any]) -> str:
     """Serialize a payload to a stable, human-diffable JSON string.
 
-    Decimals never reach this function — they are already strings — so the
+    Decimals never reach this function (they are already strings), so the
     encoder never has to choose a float representation.
     """
     if _contains_decimal(payload):  # pragma: no cover - guardrail

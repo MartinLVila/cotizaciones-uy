@@ -3,7 +3,7 @@
 Adding an institution means: subclass `Provider`, implement `fetch` and
 `parse`, commit a real saved response to `tests/fixtures/`, and write a test
 against that fixture. Nothing else. If adding a provider requires touching the
-pipeline, the abstraction is wrong — fix the abstraction, not the pipeline.
+pipeline, the abstraction is wrong; fix the abstraction, not the pipeline.
 """
 
 from __future__ import annotations

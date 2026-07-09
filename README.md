@@ -10,7 +10,7 @@ updated automatically, with the full history preserved in git.
 The primary consumer is a **frontend**: a web app fetching JSON over HTTPS.
 Every design decision resolves in favor of that consumer.
 
-> ⚠️ **Disclaimer.** This project is unaffiliated with the BCU or any financial
+> **Disclaimer.** This project is unaffiliated with the BCU or any financial
 > institution. Data comes from public sources and may be stale or wrong. Verify
 > against the institution before transacting.
 
@@ -18,11 +18,11 @@ Every design decision resolves in favor of that consumer.
 
 | Provider | Slug | Rate type | Status |
 |---|---|---|---|
-| Banco Central del Uruguay | `bcu` | `official` | ✅ verified against the live service (USD, EUR) |
-| Itaú | `itau` | `cash` | ⏳ not yet implemented (M4) |
-| BROU | `brou` | `ebanking` | ⏳ not yet implemented (M5) |
+| Banco Central del Uruguay | `bcu` | `official` | Verified against the live service (USD, EUR) |
+| Itaú | `itau` | `cash` | Not yet implemented (M4) |
+| BROU | `brou` | `ebanking` | Not yet implemented (M5) |
 
-Current milestone: **M2 — BCU, verified.** The BCU SOAP service was checked
+Current milestone: **M2: BCU, verified.** The BCU SOAP service was checked
 against live calls (not documentation), real responses are saved as fixtures,
 and the provider publishes the official USD and EUR reference rates. Parsing is
 tested offline for the happy path, the `status=0` weekend/no-close error, and
@@ -32,7 +32,7 @@ Decimal precision.
 
 - The `bcu` provider publishes the **official reference** rate (BCU currency
   codes 2222 = USD, 1111 = EUR, international group). This is a reference, not a
-  price you can transact at — that is what the retail providers (M4+) are for.
+  price you can transact at; that is what the retail providers (M4+) are for.
 - On the official reference, `buy` and `sell` are often equal (no spread).
 - The service is only queried for the last market-close date (weekends and
   holidays are skipped automatically).
@@ -41,10 +41,10 @@ Decimal precision.
 
 Published under `data/v1/` (served over HTTPS by GitHub Pages once M3 lands):
 
-- **`latest.json`** — the most recent snapshot.
-- **`history/YYYY-MM-DD.json`** — one snapshot per run; git holds the full record.
-- **`schema.json`** — the JSON Schema every payload is validated against in CI.
-- **`institutions.json`** — slug → display name, type, homepage. Don't hardcode this.
+- **`latest.json`**: the most recent snapshot.
+- **`history/YYYY-MM-DD.json`**: one snapshot per run; git holds the full record.
+- **`schema.json`**: the JSON Schema every payload is validated against in CI.
+- **`institutions.json`**: slug to display name, type, homepage. Don't hardcode this.
 
 ### Payload shape
 
@@ -112,7 +112,7 @@ uv run pytest                 # test (fully offline)
 uv run python -m cotizaciones_uy   # run the pipeline, write data/v1/
 ```
 
-The test suite runs fully offline — a test that touches the network is a broken
+The test suite runs fully offline; a test that touches the network is a broken
 test. Adding a provider means subclassing `Provider`, implementing `fetch()`
 and `parse()`, committing a real captured response to `tests/fixtures/`, and
 writing a test against it.
@@ -120,5 +120,5 @@ writing a test against it.
 ## License
 
 Code is [MIT](LICENSE). The dataset under `data/` is released into the public
-domain under [CC0 1.0](data/LICENSE) — use it for anything, no attribution
+domain under [CC0 1.0](data/LICENSE): use it for anything, no attribution
 required.

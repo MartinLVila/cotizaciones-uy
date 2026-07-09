@@ -1,4 +1,4 @@
-"""Banco Central del Uruguay — the official reference rate.
+"""Banco Central del Uruguay: the official reference rate.
 
 The BCU exposes three GeneXus-generated SOAP services. We use two: one to
 resolve the last market-close date (the BCU does not quote on weekends or

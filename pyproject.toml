@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 license = { text = "MIT" }
 # No runtime dependencies: the pipeline uses only the standard library
 # (decimal, xml.etree, json). Adding a runtime dep here is a design decision,
-# not a convenience — the policy above.
+# not a convenience.
 dependencies = []
 
 [dependency-groups]

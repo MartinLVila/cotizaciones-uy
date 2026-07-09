@@ -1,6 +1,6 @@
 """Core domain types: the `Rate` a provider produces, and the `RateType` enum.
 
-Money is `Decimal`, never `float` — `40.45` has no exact binary representation,
+Money is `Decimal`, never `float`. `40.45` has no exact binary representation,
 and emitting a float would be our bug.
 """
 
