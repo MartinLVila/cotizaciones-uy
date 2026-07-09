@@ -1,0 +1,113 @@
+# cotizaciones-uy
+
+**The open, machine-readable dataset of currency exchange rates in Uruguay.**
+
+Every Uruguayan bank and *casa de cambio* publishes its rates in its own
+format; the Banco Central del Uruguay (BCU) publishes only an official
+reference rate. This repository collects them into one versioned JSON dataset,
+updated automatically, with the full history preserved in git.
+
+The primary consumer is a **frontend**: a web app fetching JSON over HTTPS.
+Every design decision resolves in favor of that consumer.
+
+> ⚠️ **Disclaimer.** This project is unaffiliated with the BCU or any financial
+> institution. Data comes from public sources and may be stale or wrong. Verify
+> against the institution before transacting.
+
+## Status
+
+| Provider | Slug | Rate type | Status |
+|---|---|---|---|
+| Banco Central del Uruguay | `bcu` | `official` | ⏳ not yet implemented (M2) |
+| Itaú | `itau` | `cash` | ⏳ not yet implemented (M4) |
+| BROU | `brou` | `ebanking` | ⏳ not yet implemented (M5) |
+
+Current milestone: **M1 — the data contract**. The pipeline, schema, and models
+exist and are tested; no real provider is wired up yet, so the published
+dataset is an empty (but valid) payload.
+
+## The data
+
+Published under `data/v1/` (served over HTTPS by GitHub Pages once M3 lands):
+
+- **`latest.json`** — the most recent snapshot.
+- **`history/YYYY-MM-DD.json`** — one snapshot per run; git holds the full record.
+- **`schema.json`** — the JSON Schema every payload is validated against in CI.
+- **`institutions.json`** — slug → display name, type, homepage. Don't hardcode this.
+
+### Payload shape
+
+```json
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-09T14:00:03Z",
+  "rates": [
+    {
+      "institution": "bcu",
+      "institution_name": "Banco Central del Uruguay",
+      "currency": "USD",
+      "buy": "39.750",
+      "sell": "40.450",
+      "rate_type": "official",
+      "quoted_at": "2026-07-08",
+      "fetched_at": "2026-07-09T14:00:03Z",
+      "source_url": "https://cotizaciones.bcu.gub.uy/..."
+    }
+  ],
+  "failures": {
+    "brou": "TimeoutError: read timed out"
+  }
+}
+```
+
+### Field semantics
+
+| Field | Meaning |
+|---|---|
+| `buy` | What the institution **pays you** for one unit of foreign currency. You are selling. |
+| `sell` | What the institution **charges you** for one unit. You are buying. |
+| `rate_type` | `official` \| `cash` \| `ebanking`. **Never compare across types.** |
+| `quoted_at` | The date the rate applies to. |
+| `fetched_at` | When we retrieved it. Lets you detect stale data. |
+| `currency` | ISO 4217 code. |
+
+**Money is emitted as JSON strings, never numbers.** `"40.450"`, not `40.45`.
+Parse it to whatever you like on your end, but the wire format preserves exact
+decimal precision. `40.45` has no exact binary representation, so emitting a
+float would silently corrupt the value.
+
+## Design
+
+- **A data repo, not a service.** No server, no database. GitHub Actions runs
+  the pipeline on a schedule and commits the result; GitHub Pages serves it.
+- **git is the historical database.** Every commit is a free, permanent,
+  timestamped snapshot.
+- **A broken provider never breaks the run.** Each provider is isolated; its
+  failure is recorded in `failures` and the rest of the dataset still ships.
+- **Never overwrite good data with nothing.** If every provider fails, the run
+  exits non-zero and leaves `latest.json` untouched.
+- **The schema is versioned in the URL path** (`/v1/`). Breaking a public JSON
+  URL is breaking an API.
+
+## Development
+
+Requires [uv](https://docs.astral.sh/uv/).
+
+```sh
+uv sync                       # create the venv, install dev deps
+uv run ruff check .           # lint
+uv run mypy                   # type-check (strict)
+uv run pytest                 # test (fully offline)
+uv run python -m cotizaciones_uy   # run the pipeline, write data/v1/
+```
+
+The test suite runs fully offline — a test that touches the network is a broken
+test. Adding a provider means subclassing `Provider`, implementing `fetch()`
+and `parse()`, committing a real captured response to `tests/fixtures/`, and
+writing a test against it.
+
+## License
+
+Code is [MIT](LICENSE). The dataset under `data/` is released into the public
+domain under [CC0 1.0](data/LICENSE) — use it for anything, no attribution
+required.

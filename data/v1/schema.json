@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://martinlvila.github.io/cotizaciones-uy/v1/schema.json",
+  "title": "cotizaciones-uy v1 payload",
+  "description": "Currency exchange rates in Uruguay. Money crosses the wire as strings, never numbers.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "rates", "failures"],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "When this payload was produced (UTC).",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "rates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rate" }
+    },
+    "failures": {
+      "type": "object",
+      "description": "Provider slug -> error string, for providers that failed this run.",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "rate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "institution",
+        "institution_name",
+        "currency",
+        "buy",
+        "sell",
+        "rate_type",
+        "quoted_at",
+        "fetched_at",
+        "source_url"
+      ],
+      "properties": {
+        "institution": {
+          "type": "string",
+          "description": "Permanent lowercase-kebab slug.",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "institution_name": { "type": "string", "minLength": 1 },
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 code.",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "buy": {
+          "type": "string",
+          "description": "What the institution pays you for one unit (you are selling).",
+          "pattern": "^-?\\d+(\\.\\d+)?$"
+        },
+        "sell": {
+          "type": "string",
+          "description": "What the institution charges you for one unit (you are buying).",
+          "pattern": "^-?\\d+(\\.\\d+)?$"
+        },
+        "rate_type": {
+          "type": "string",
+          "description": "Never compare across types.",
+          "enum": ["official", "cash", "ebanking"]
+        },
+        "quoted_at": {
+          "type": "string",
+          "description": "The date the rate applies to.",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "fetched_at": {
+          "type": "string",
+          "description": "When we retrieved it (UTC). Lets a consumer detect stale data.",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

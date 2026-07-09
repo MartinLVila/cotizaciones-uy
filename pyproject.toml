@@ -1,0 +1,43 @@
+[project]
+name = "cotizaciones-uy"
+version = "0.1.0"
+description = "The open dataset of currency exchange rates in Uruguay."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+# No runtime dependencies: the pipeline uses only the standard library
+# (decimal, xml.etree, json). Adding a runtime dep here is a design decision,
+# not a convenience — the policy above.
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy>=1.11",
+    "ruff>=0.6",
+    "pytest>=8.0",
+    "jsonschema>=4.0",
+    "types-jsonschema>=4.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cotizaciones_uy"]
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
