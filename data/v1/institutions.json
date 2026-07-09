@@ -1,4 +1,11 @@
 {
   "schema_version": 1,
-  "institutions": []
+  "institutions": [
+    {
+      "slug": "bcu",
+      "name": "Banco Central del Uruguay",
+      "rate_type": "official",
+      "homepage": "https://www.bcu.gub.uy/"
+    }
+  ]
 }

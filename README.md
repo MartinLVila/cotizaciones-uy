@@ -18,13 +18,24 @@ Every design decision resolves in favor of that consumer.
 
 | Provider | Slug | Rate type | Status |
 |---|---|---|---|
-| Banco Central del Uruguay | `bcu` | `official` | ⏳ not yet implemented (M2) |
+| Banco Central del Uruguay | `bcu` | `official` | ✅ verified against the live service (USD, EUR) |
 | Itaú | `itau` | `cash` | ⏳ not yet implemented (M4) |
 | BROU | `brou` | `ebanking` | ⏳ not yet implemented (M5) |
 
-Current milestone: **M1 — the data contract**. The pipeline, schema, and models
-exist and are tested; no real provider is wired up yet, so the published
-dataset is an empty (but valid) payload.
+Current milestone: **M2 — BCU, verified.** The BCU SOAP service was checked
+against live calls (not documentation), real responses are saved as fixtures,
+and the provider publishes the official USD and EUR reference rates. Parsing is
+tested offline for the happy path, the `status=0` weekend/no-close error, and
+Decimal precision.
+
+### Notes on the BCU data
+
+- The `bcu` provider publishes the **official reference** rate (BCU currency
+  codes 2222 = USD, 1111 = EUR, international group). This is a reference, not a
+  price you can transact at — that is what the retail providers (M4+) are for.
+- On the official reference, `buy` and `sell` are often equal (no spread).
+- The service is only queried for the last market-close date (weekends and
+  holidays are skipped automatically).
 
 ## The data
 

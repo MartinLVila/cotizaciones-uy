@@ -1,6 +1,29 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-09T23:04:53Z",
-  "rates": [],
+  "generated_at": "2026-07-09T23:16:20Z",
+  "rates": [
+    {
+      "institution": "bcu",
+      "institution_name": "Banco Central del Uruguay",
+      "currency": "EUR",
+      "buy": "45.986405",
+      "sell": "45.986405",
+      "rate_type": "official",
+      "quoted_at": "2026-07-09",
+      "fetched_at": "2026-07-09T23:16:20Z",
+      "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
+    },
+    {
+      "institution": "bcu",
+      "institution_name": "Banco Central del Uruguay",
+      "currency": "USD",
+      "buy": "40.219000",
+      "sell": "40.219000",
+      "rate_type": "official",
+      "quoted_at": "2026-07-09",
+      "fetched_at": "2026-07-09T23:16:20Z",
+      "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
+    }
+  ],
   "failures": {}
 }

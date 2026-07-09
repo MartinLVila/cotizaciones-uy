@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<wsbcucotizaciones.ExecuteResponse xmlns="Cotiza">
+			<Salida xmlns="Cotiza">
+				<respuestastatus>
+					<status>0</status>
+					<codigoerror>100</codigoerror>
+					<mensaje>No existe cotización para la fecha indicada</mensaje>
+				</respuestastatus>
+				<datoscotizaciones>
+					<datoscotizaciones.dato xmlns="Cotiza">
+						<Fecha xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true">
+						</Fecha>
+						<Moneda>0</Moneda>
+						<Nombre/>
+						<CodigoISO/>
+						<Emisor/>
+						<TCC>0.000000</TCC>
+						<TCV>0.000000</TCV>
+						<ArbAct>0.000000</ArbAct>
+						<FormaArbitrar>0</FormaArbitrar>
+					</datoscotizaciones.dato>
+				</datoscotizaciones>
+			</Salida>
+		</wsbcucotizaciones.ExecuteResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

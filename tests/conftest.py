@@ -41,7 +41,7 @@ class OkProvider(Provider):
     def fetch(self) -> str:
         return "raw"
 
-    def parse(self, raw: str) -> list[Rate]:
+    def parse(self, raw: str, fetched_at: datetime) -> list[Rate]:
         return [make_rate(institution="ok", currency="USD")]
 
 
@@ -53,5 +53,7 @@ class BoomProvider(Provider):
     def fetch(self) -> str:
         raise TimeoutError("read timed out")
 
-    def parse(self, raw: str) -> list[Rate]:  # pragma: no cover - never reached
+    def parse(  # pragma: no cover - never reached
+        self, raw: str, fetched_at: datetime
+    ) -> list[Rate]:
         return []

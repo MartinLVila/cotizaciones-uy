@@ -14,7 +14,7 @@ GENERATED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
 
 
 def test_zero_providers_publishes_empty_payload() -> None:
-    result = pipeline.run([])
+    result = pipeline.run([], fetched_at=GENERATED_AT)
     assert result.attempted == 0
     assert result.succeeded == 0
     assert result.should_publish is True
@@ -26,7 +26,7 @@ def test_zero_providers_publishes_empty_payload() -> None:
 
 
 def test_one_provider_fails_is_recorded_not_raised() -> None:
-    result = pipeline.run([OkProvider(), BoomProvider()])
+    result = pipeline.run([OkProvider(), BoomProvider()], fetched_at=GENERATED_AT)
     assert result.attempted == 2
     assert result.succeeded == 1
     assert [r.institution for r in result.rates] == ["ok"]
@@ -35,7 +35,7 @@ def test_one_provider_fails_is_recorded_not_raised() -> None:
 
 
 def test_all_providers_fail_does_not_publish() -> None:
-    result = pipeline.run([BoomProvider()])
+    result = pipeline.run([BoomProvider()], fetched_at=GENERATED_AT)
     assert result.attempted == 1
     assert result.succeeded == 0
     assert result.should_publish is False

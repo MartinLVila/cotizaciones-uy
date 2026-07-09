@@ -21,7 +21,8 @@ DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "v1"
 
 
 def main() -> int:
-    result = pipeline.run(PROVIDERS)
+    now = datetime.now(UTC)
+    result = pipeline.run(PROVIDERS, fetched_at=now)
 
     if not result.should_publish:
         print(
@@ -31,7 +32,6 @@ def main() -> int:
         )
         return 1
 
-    now = datetime.now(UTC)
     payload = build_payload(result.rates, result.failures, generated_at=now)
     text = dump_json(payload)
 
