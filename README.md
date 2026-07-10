@@ -21,12 +21,13 @@ Every design decision resolves in favor of that consumer.
 | Banco Central del Uruguay | `bcu` | `official` | Verified against the live service (USD, EUR) |
 | Itaú | `itau` | `cash` | Verified against the live document (USD, EUR) |
 | BROU | `brou` | `cash` + `ebanking` | Verified against the live endpoint (USD, EUR) |
-| BBVA | `bbva` | `cash` | Verified against the live page (USD, EUR) |
+| BBVA | `bbva` | `cash` | Verified locally (USD, EUR); blocked by Akamai from CI, so it fails the hourly run |
 
 Current milestone: **M6: BBVA.** The dataset is live on GitHub Pages, refreshed
 hourly, and now covers four institutions: the BCU official reference, plus
 Itaú, BROU, and BBVA retail rates. Each parser is verified against the live
-source and tested offline.
+source and tested offline. `bbva` is a known exception: it works from a
+residential IP but not from CI (see below).
 
 ### Notes on the data
 
@@ -47,6 +48,11 @@ source and tested offline.
   small server-rendered HTML table at a stable URL. No session token or
   client-side rendering is involved. Amounts use a comma decimal separator,
   and the source has no quote date, so `quoted_at` is the fetch date.
+  BBVA's endpoint sits behind Akamai Bot Manager, which scores requests from
+  cloud/datacenter IP ranges (including GitHub Actions runners) as bots and
+  returns `403`, regardless of headers. The provider works when run from a
+  residential IP but fails the hourly CI run; that failure is expected and is
+  isolated like any other, so it does not affect the rest of the dataset.
 
 ## The data
 
