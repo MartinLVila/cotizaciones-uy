@@ -1,7 +1,29 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-10T16:23:10Z",
+  "generated_at": "2026-07-10T17:02:53Z",
   "rates": [
+    {
+      "institution": "bbva",
+      "institution_name": "BBVA Uruguay",
+      "currency": "EUR",
+      "buy": "4123",
+      "sell": "4977",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-10",
+      "fetched_at": "2026-07-10T17:02:53Z",
+      "source_url": "https://bbvanet.bbva.com.uy/WebInst/Cotizaciones"
+    },
+    {
+      "institution": "bbva",
+      "institution_name": "BBVA Uruguay",
+      "currency": "USD",
+      "buy": "3800",
+      "sell": "4200",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-10",
+      "fetched_at": "2026-07-10T17:02:53Z",
+      "source_url": "https://bbvanet.bbva.com.uy/WebInst/Cotizaciones"
+    },
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
@@ -10,7 +32,7 @@
       "sell": "45.986405",
       "rate_type": "official",
       "quoted_at": "2026-07-09",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,7 +43,7 @@
       "sell": "40.219000",
       "rate_type": "official",
       "quoted_at": "2026-07-09",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -32,7 +54,7 @@
       "sell": "48.32000",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -43,7 +65,7 @@
       "sell": "41.30000",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -54,7 +76,7 @@
       "sell": "40.80000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +87,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -76,11 +98,31 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T16:23:10Z",
+      "fetched_at": "2026-07-10T17:02:53Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
+    },
+    {
+      "institution": "varlix",
+      "institution_name": "Varlix",
+      "currency": "EUR",
+      "buy": "44.45",
+      "sell": "48.45",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-10",
+      "fetched_at": "2026-07-10T17:02:53Z",
+      "source_url": "https://www.varlix.com.uy/"
+    },
+    {
+      "institution": "varlix",
+      "institution_name": "Varlix",
+      "currency": "USD",
+      "buy": "38.90",
+      "sell": "41.40",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-10",
+      "fetched_at": "2026-07-10T17:02:53Z",
+      "source_url": "https://www.varlix.com.uy/"
     }
   ],
-  "failures": {
-    "bbva": "HTTPError: HTTP Error 403: Forbidden"
-  }
+  "failures": {}
 }

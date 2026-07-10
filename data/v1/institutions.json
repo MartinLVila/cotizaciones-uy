@@ -24,6 +24,12 @@
       "name": "BBVA Uruguay",
       "rate_type": "cash",
       "homepage": "https://www.bbva.com.uy/"
+    },
+    {
+      "slug": "varlix",
+      "name": "Varlix",
+      "rate_type": "cash",
+      "homepage": "https://www.varlix.com.uy/"
     }
   ]
 }

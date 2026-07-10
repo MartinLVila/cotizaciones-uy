@@ -22,11 +22,12 @@ Every design decision resolves in favor of that consumer.
 | Itaú | `itau` | `cash` | Verified against the live document (USD, EUR) |
 | BROU | `brou` | `cash` + `ebanking` | Verified against the live endpoint (USD, EUR) |
 | BBVA | `bbva` | `cash` | Verified locally (USD, EUR); blocked by Akamai from CI, so it fails the hourly run |
+| Varlix | `varlix` | `cash` | Verified against the live page (USD, EUR) |
 
-Current milestone: **M6: BBVA.** The dataset is live on GitHub Pages, refreshed
-hourly, and now covers four institutions: the BCU official reference, plus
-Itaú, BROU, and BBVA retail rates. Each parser is verified against the live
-source and tested offline. `bbva` is a known exception: it works from a
+Current milestone: **M7: Varlix.** The dataset is live on GitHub Pages, refreshed
+hourly, and now covers five institutions: the BCU official reference, plus
+Itaú, BROU, BBVA, and Varlix retail rates. Each parser is verified against the
+live source and tested offline. `bbva` is a known exception: it works from a
 residential IP but not from CI (see below).
 
 ### Notes on the data
@@ -53,6 +54,12 @@ residential IP but not from CI (see below).
   returns `403`, regardless of headers. The provider works when run from a
   residential IP but fails the hourly CI run; that failure is expected and is
   isolated like any other, so it does not affect the rest of the dataset.
+- The `varlix` provider publishes Varlix's retail board (`cash`) rates from
+  its plain homepage HTML (a casa de cambio, not a bank). Currencies are
+  identified by their Spanish display name rather than an ISO code, so we map
+  the names we recognize (USD, EUR) and skip the rest (ARS, BRL). Amounts use
+  a comma decimal separator, and the source has no quote date, so `quoted_at`
+  is the fetch date.
 
 ## The data
 
