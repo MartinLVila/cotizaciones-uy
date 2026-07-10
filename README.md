@@ -21,11 +21,12 @@ Every design decision resolves in favor of that consumer.
 | Banco Central del Uruguay | `bcu` | `official` | Verified against the live service (USD, EUR) |
 | Itaú | `itau` | `cash` | Verified against the live document (USD, EUR) |
 | BROU | `brou` | `cash` + `ebanking` | Verified against the live endpoint (USD, EUR) |
+| BBVA | `bbva` | `cash` | Verified against the live page (USD, EUR) |
 
-Current milestone: **M5: BROU.** The dataset is live on GitHub Pages, refreshed
-hourly, and now covers all three major institutions: the BCU official reference,
-plus Itaú and BROU retail rates. Each parser is verified against the live source
-and tested offline.
+Current milestone: **M6: BBVA.** The dataset is live on GitHub Pages, refreshed
+hourly, and now covers four institutions: the BCU official reference, plus
+Itaú, BROU, and BBVA retail rates. Each parser is verified against the live
+source and tested offline.
 
 ### Notes on the data
 
@@ -42,6 +43,10 @@ and tested offline.
 - The `itau` provider publishes Itaú's retail board (`cash`) rates, which carry
   a real spread. Amounts on the wire come from a document that uses a comma
   decimal separator; we normalize them to `Decimal`.
+- The `bbva` provider publishes BBVA's retail board (`cash`) rates from a
+  small server-rendered HTML table at a stable URL. No session token or
+  client-side rendering is involved. Amounts use a comma decimal separator,
+  and the source has no quote date, so `quoted_at` is the fetch date.
 
 ## The data
 
