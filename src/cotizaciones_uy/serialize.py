@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import json
 from datetime import UTC, date, datetime
-from decimal import Decimal
 from typing import Any
 
 from . import SCHEMA_VERSION
@@ -64,19 +63,8 @@ def build_payload(
 def dump_json(payload: dict[str, Any]) -> str:
     """Serialize a payload to a stable, human-diffable JSON string.
 
-    Decimals never reach this function (they are already strings), so the
-    encoder never has to choose a float representation.
+    Decimals never reach this function (they are already strings). If one
+    ever did, `json.dumps` raises `TypeError` on it natively; no manual
+    guard is needed on top of that.
     """
-    if _contains_decimal(payload):  # pragma: no cover - guardrail
-        raise TypeError("payload contains a Decimal; convert to str before dumping")
     return json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=False) + "\n"
-
-
-def _contains_decimal(value: Any) -> bool:
-    if isinstance(value, Decimal):
-        return True
-    if isinstance(value, dict):
-        return any(_contains_decimal(v) for v in value.values())
-    if isinstance(value, list):
-        return any(_contains_decimal(v) for v in value)
-    return False
