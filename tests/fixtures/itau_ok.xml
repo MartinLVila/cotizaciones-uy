@@ -1,0 +1,33 @@
+<root>
+		<fecha>20260709201000</fecha>
+		<cotizacion>
+			<moneda>US.D</moneda>
+			<compra>38,90</compra>
+			<venta>41,50</venta>
+		</cotizacion>
+		<cotizacion>
+			<moneda>ARGP</moneda>
+			<compra>0,02</compra>
+			<venta>0,20</venta>
+		</cotizacion>
+		<cotizacion>
+			<moneda>CRUZ</moneda>
+			<compra>6,90</compra>
+			<venta>8,60</venta>
+		</cotizacion>
+		<cotizacion>
+			<moneda>EUR </moneda>
+			<compra>43,80</compra>
+			<venta>48,50</venta>
+		</cotizacion>
+		<cotizacion>
+			<moneda>URGI</moneda>
+			<compra>6,61</compra>
+			<venta>6,61</venta>
+		</cotizacion>
+		<cotizacion>
+			<moneda>LINK</moneda>
+			<compra>39,20</compra>
+			<venta>41,20</venta>
+		</cotizacion>
+</root>

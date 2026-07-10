@@ -7,7 +7,9 @@ from __future__ import annotations
 
 from .provider import Provider
 from .providers.bcu import BcuProvider
+from .providers.itau import ItauProvider
 
 PROVIDERS: list[Provider] = [
     BcuProvider(),
+    ItauProvider(),
 ]

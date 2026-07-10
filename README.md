@@ -19,27 +19,28 @@ Every design decision resolves in favor of that consumer.
 | Provider | Slug | Rate type | Status |
 |---|---|---|---|
 | Banco Central del Uruguay | `bcu` | `official` | Verified against the live service (USD, EUR) |
-| Itaú | `itau` | `cash` | Not yet implemented (M4) |
+| Itaú | `itau` | `cash` | Verified against the live document (USD, EUR) |
 | BROU | `brou` | `ebanking` | Not yet implemented (M5) |
 
-Current milestone: **M2: BCU, verified.** The BCU SOAP service was checked
-against live calls (not documentation), real responses are saved as fixtures,
-and the provider publishes the official USD and EUR reference rates. Parsing is
-tested offline for the happy path, the `status=0` weekend/no-close error, and
-Decimal precision.
+Current milestone: **M4: first retail provider.** The dataset is live on GitHub
+Pages, refreshed hourly. It carries the BCU official reference and Itaú's retail
+board rates, each parser verified against the live source and tested offline.
 
-### Notes on the BCU data
+### Notes on the data
 
 - The `bcu` provider publishes the **official reference** rate (BCU currency
   codes 2222 = USD, 1111 = EUR, international group). This is a reference, not a
-  price you can transact at; that is what the retail providers (M4+) are for.
-- On the official reference, `buy` and `sell` are often equal (no spread).
-- The service is only queried for the last market-close date (weekends and
-  holidays are skipped automatically).
+  price you can transact at; that is what the retail providers are for. On the
+  official reference, `buy` and `sell` are often equal (no spread). The service
+  is only queried for the last market-close date (weekends and holidays are
+  skipped automatically).
+- The `itau` provider publishes Itaú's retail board (`cash`) rates, which carry
+  a real spread. Amounts on the wire come from a document that uses a comma
+  decimal separator; we normalize them to `Decimal`.
 
 ## The data
 
-Published under `data/v1/` (served over HTTPS by GitHub Pages once M3 lands):
+Published under `data/v1/` (served over HTTPS by GitHub Pages):
 
 - **`latest.json`**: the most recent snapshot.
 - **`history/YYYY-MM-DD.json`**: one snapshot per run; git holds the full record.

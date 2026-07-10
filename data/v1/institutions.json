@@ -6,6 +6,12 @@
       "name": "Banco Central del Uruguay",
       "rate_type": "official",
       "homepage": "https://www.bcu.gub.uy/"
+    },
+    {
+      "slug": "itau",
+      "name": "Itau Uruguay",
+      "rate_type": "cash",
+      "homepage": "https://www.itau.com.uy/"
     }
   ]
 }

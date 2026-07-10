@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-10T00:01:29Z",
+  "generated_at": "2026-07-10T00:09:25Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "45.986405",
       "rate_type": "official",
       "quoted_at": "2026-07-09",
-      "fetched_at": "2026-07-10T00:01:29Z",
+      "fetched_at": "2026-07-10T00:09:25Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,8 +21,30 @@
       "sell": "40.219000",
       "rate_type": "official",
       "quoted_at": "2026-07-09",
-      "fetched_at": "2026-07-10T00:01:29Z",
+      "fetched_at": "2026-07-10T00:09:25Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
+    },
+    {
+      "institution": "itau",
+      "institution_name": "Itau Uruguay",
+      "currency": "EUR",
+      "buy": "43.80",
+      "sell": "48.50",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-09",
+      "fetched_at": "2026-07-10T00:09:25Z",
+      "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
+    },
+    {
+      "institution": "itau",
+      "institution_name": "Itau Uruguay",
+      "currency": "USD",
+      "buy": "38.90",
+      "sell": "41.50",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-09",
+      "fetched_at": "2026-07-10T00:09:25Z",
+      "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     }
   ],
   "failures": {}
