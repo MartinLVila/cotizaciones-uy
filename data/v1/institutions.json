@@ -12,6 +12,12 @@
       "name": "Itau Uruguay",
       "rate_type": "cash",
       "homepage": "https://www.itau.com.uy/"
+    },
+    {
+      "slug": "brou",
+      "name": "Banco de la Republica Oriental del Uruguay",
+      "rate_type": "ebanking",
+      "homepage": "https://www.brou.com.uy/"
     }
   ]
 }

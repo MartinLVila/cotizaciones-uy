@@ -49,7 +49,10 @@ def build_payload(
     generated_at: datetime,
 ) -> dict[str, Any]:
     """Assemble the `latest.json` / history payload from rates and failures."""
-    ordered = sorted(rates, key=lambda r: (r.institution, r.currency))
+    # Sort by (institution, currency, rate_type): one institution can quote the
+    # same currency under two rate types (e.g. BROU's regular and eBROU dollar),
+    # so rate_type is part of the key to keep the order stable across runs.
+    ordered = sorted(rates, key=lambda r: (r.institution, r.currency, r.rate_type))
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": _format_instant(generated_at),

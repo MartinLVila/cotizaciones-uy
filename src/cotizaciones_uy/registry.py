@@ -7,9 +7,11 @@ from __future__ import annotations
 
 from .provider import Provider
 from .providers.bcu import BcuProvider
+from .providers.brou import BrouProvider
 from .providers.itau import ItauProvider
 
 PROVIDERS: list[Provider] = [
     BcuProvider(),
+    BrouProvider(),
     ItauProvider(),
 ]

@@ -20,11 +20,12 @@ Every design decision resolves in favor of that consumer.
 |---|---|---|---|
 | Banco Central del Uruguay | `bcu` | `official` | Verified against the live service (USD, EUR) |
 | Itaú | `itau` | `cash` | Verified against the live document (USD, EUR) |
-| BROU | `brou` | `ebanking` | Not yet implemented (M5) |
+| BROU | `brou` | `cash` + `ebanking` | Verified against the live endpoint (USD, EUR) |
 
-Current milestone: **M4: first retail provider.** The dataset is live on GitHub
-Pages, refreshed hourly. It carries the BCU official reference and Itaú's retail
-board rates, each parser verified against the live source and tested offline.
+Current milestone: **M5: BROU.** The dataset is live on GitHub Pages, refreshed
+hourly, and now covers all three major institutions: the BCU official reference,
+plus Itaú and BROU retail rates. Each parser is verified against the live source
+and tested offline.
 
 ### Notes on the data
 
@@ -34,6 +35,10 @@ board rates, each parser verified against the live source and tested offline.
   official reference, `buy` and `sell` are often equal (no spread). The service
   is only queried for the last market-close date (weekends and holidays are
   skipped automatically).
+- The `brou` provider targets the Liferay portlet endpoint that serves BROU's
+  rates (no headless browser). It publishes the dollar twice: the regular rate
+  (`cash`) and the preferential eBROU online-banking rate (`ebanking`), plus the
+  euro (`cash`). The source has no quote date, so `quoted_at` is the fetch date.
 - The `itau` provider publishes Itaú's retail board (`cash`) rates, which carry
   a real spread. Amounts on the wire come from a document that uses a comma
   decimal separator; we normalize them to `Decimal`.
