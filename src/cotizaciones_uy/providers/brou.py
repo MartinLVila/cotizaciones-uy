@@ -135,5 +135,11 @@ class BrouProvider(Provider):
 
 
 def _money(text: str) -> Decimal:
-    """Parse a BROU amount: dot thousands separator, comma decimal separator."""
-    return Decimal(text.strip().replace(".", "").replace(",", "."))
+    """Parse a BROU amount: dot thousands separator, comma decimal separator
+    ("2.070,00000"). A dot is only treated as a thousands separator when a
+    comma is also present to mark the decimal point.
+    """
+    text = text.strip()
+    if "," in text:
+        text = text.replace(".", "").replace(",", ".")
+    return Decimal(text)

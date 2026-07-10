@@ -83,5 +83,11 @@ class VarlixProvider(Provider):
 
 
 def _money(text: str) -> Decimal:
-    """Parse a Varlix amount: dot thousands separator, comma decimal separator."""
-    return Decimal(text.strip().replace(".", "").replace(",", "."))
+    """Parse a Varlix amount: usually comma-decimal ("38,90"). A dot is only
+    treated as a thousands separator when a comma is also present to mark the
+    decimal point; a lone dot is left alone rather than stripped.
+    """
+    text = text.strip()
+    if "," in text:
+        text = text.replace(".", "").replace(",", ".")
+    return Decimal(text)

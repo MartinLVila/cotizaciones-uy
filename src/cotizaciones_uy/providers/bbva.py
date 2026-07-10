@@ -71,5 +71,12 @@ class BbvaProvider(Provider):
 
 
 def _money(text: str) -> Decimal:
-    """Parse a BBVA amount: dot thousands separator, comma decimal separator."""
-    return Decimal(text.strip().replace(".", "").replace(",", "."))
+    """Parse a BBVA amount: usually comma-decimal ("41,23"), but the page has
+    been observed to serve dot-decimal too ("41.23"). A dot is only a
+    thousands separator when a comma is also present to mark the decimal
+    point; a lone dot is left alone rather than stripped.
+    """
+    text = text.strip()
+    if "," in text:
+        text = text.replace(".", "").replace(",", ".")
+    return Decimal(text)

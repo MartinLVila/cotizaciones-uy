@@ -11,7 +11,7 @@ from decimal import Decimal
 from pathlib import Path
 
 from cotizaciones_uy.models import Rate, RateType
-from cotizaciones_uy.providers.brou import BrouProvider
+from cotizaciones_uy.providers.brou import BrouProvider, _money
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
@@ -61,3 +61,9 @@ def test_non_published_currencies_are_skipped() -> None:
     # The fragment also lists ARS, BRL, GBP, CHF, PYG and gold; none are emitted.
     currencies = {c for c, _ in _parsed()}
     assert currencies == {"USD", "EUR"}
+
+
+def test_money_handles_dot_decimal_too() -> None:
+    # A lone dot must not be stripped as if it were a thousands separator.
+    assert _money("39.00000") == Decimal("39.00000")
+    assert _money("2.070,00000") == Decimal("2070.00000")

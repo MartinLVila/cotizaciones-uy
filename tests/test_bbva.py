@@ -7,7 +7,7 @@ from decimal import Decimal
 from pathlib import Path
 
 from cotizaciones_uy.models import RateType
-from cotizaciones_uy.providers.bbva import BbvaProvider
+from cotizaciones_uy.providers.bbva import BbvaProvider, _money
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
@@ -39,3 +39,10 @@ def test_comma_decimal_is_converted() -> None:
     )
     assert eur.buy == Decimal("41.23")
     assert eur.sell == Decimal("49.77")
+
+
+def test_money_handles_dot_decimal_too() -> None:
+    # The page has been observed to serve amounts as "41.23" instead of the
+    # usual "41,23"; a lone dot must not be stripped as a thousands separator.
+    assert _money("41.23") == Decimal("41.23")
+    assert _money("41,23") == Decimal("41.23")

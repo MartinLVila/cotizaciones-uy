@@ -12,7 +12,7 @@ from decimal import Decimal
 from pathlib import Path
 
 from cotizaciones_uy.models import RateType
-from cotizaciones_uy.providers.gales import GalesProvider
+from cotizaciones_uy.providers.gales import GalesProvider, _money
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 FETCHED_AT = datetime(2026, 7, 10, 14, 0, 3, tzinfo=UTC)
@@ -49,6 +49,12 @@ def test_comma_decimal_is_converted() -> None:
     )
     assert eur.buy == Decimal("44.50")
     assert eur.sell == Decimal("48.50")
+
+
+def test_money_handles_dot_decimal_too() -> None:
+    # A lone dot must not be stripped as if it were a thousands separator.
+    assert _money("39.00") == Decimal("39.00")
+    assert _money("39,00") == Decimal("39.00")
 
 
 def test_non_published_currencies_are_skipped() -> None:
