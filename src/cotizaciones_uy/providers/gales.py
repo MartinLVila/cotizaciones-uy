@@ -24,12 +24,12 @@ Notes:
 from __future__ import annotations
 
 import re
-import urllib.request
 from datetime import date, datetime
-from decimal import Decimal
 
 from ..models import Rate, RateType
 from ..provider import Provider
+from ._http import fetch_text
+from ._money import parse_comma_decimal
 
 _URL = "https://www.gales.com.uy/"
 _TIMEOUT = 30
@@ -59,11 +59,7 @@ class GalesProvider(Provider):
     rate_type = RateType.CASH
 
     def fetch(self) -> str:
-        headers = {"User-Agent": "cotizaciones-uy"}
-        request = urllib.request.Request(_URL, headers=headers)
-        with urllib.request.urlopen(request, timeout=_TIMEOUT) as response:  # noqa: S310 - fixed https URL
-            payload: bytes = response.read()
-        return payload.decode("utf-8")
+        return fetch_text(_URL, _TIMEOUT)
 
     def parse(self, raw: str, fetched_at: datetime) -> list[Rate]:
         date_match = _DATE_RE.search(raw)
@@ -82,8 +78,8 @@ class GalesProvider(Provider):
                     institution=self.slug,
                     institution_name=self.name,
                     currency=currency,
-                    buy=_money(buy),
-                    sell=_money(sell),
+                    buy=parse_comma_decimal(buy),
+                    sell=parse_comma_decimal(sell),
                     rate_type=self.rate_type,
                     quoted_at=quoted_at,
                     fetched_at=fetched_at,
@@ -91,14 +87,3 @@ class GalesProvider(Provider):
                 )
             )
         return rates
-
-
-def _money(text: str) -> Decimal:
-    """Parse a Gales amount: usually comma-decimal ("39,00"). A dot is only
-    treated as a thousands separator when a comma is also present to mark the
-    decimal point; a lone dot is left alone rather than stripped.
-    """
-    text = text.strip()
-    if "," in text:
-        text = text.replace(".", "").replace(",", ".")
-    return Decimal(text)

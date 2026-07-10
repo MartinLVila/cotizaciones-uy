@@ -6,25 +6,18 @@ and Decimal precision surviving the parse.
 
 from __future__ import annotations
 
-from datetime import UTC, date, datetime
+from datetime import date
 from decimal import Decimal
-from pathlib import Path
 
 import pytest
 
+from conftest import FETCHED_AT, fixture
 from cotizaciones_uy.models import RateType
 from cotizaciones_uy.providers.bcu import BcuProvider
 
-FIXTURES = Path(__file__).resolve().parent / "fixtures"
-FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
-
-
-def _fixture(name: str) -> str:
-    return (FIXTURES / name).read_text(encoding="utf-8")
-
 
 def test_parses_official_usd_and_eur() -> None:
-    rates = BcuProvider().parse(_fixture("bcu_ok.xml"), FETCHED_AT)
+    rates = BcuProvider().parse(fixture("bcu_ok.xml"), FETCHED_AT)
     by_currency = {r.currency: r for r in rates}
 
     assert set(by_currency) == {"USD", "EUR"}
@@ -41,13 +34,13 @@ def test_parses_official_usd_and_eur() -> None:
 
 def test_maps_currency_ourselves_not_from_codigoiso() -> None:
     # The fixture reports CodigoISO="EURO" for code 1111; we must emit "EUR".
-    rates = BcuProvider().parse(_fixture("bcu_ok.xml"), FETCHED_AT)
+    rates = BcuProvider().parse(fixture("bcu_ok.xml"), FETCHED_AT)
     assert "EUR" in {r.currency for r in rates}
     assert "EURO" not in {r.currency for r in rates}
 
 
 def test_decimal_precision_is_preserved() -> None:
-    rates = BcuProvider().parse(_fixture("bcu_ok.xml"), FETCHED_AT)
+    rates = BcuProvider().parse(fixture("bcu_ok.xml"), FETCHED_AT)
     eur = next(r for r in rates if r.currency == "EUR")
     # Exact string from the service; no float rounding on the way in.
     assert eur.sell == Decimal("45.986405")
@@ -58,4 +51,4 @@ def test_status_zero_raises_and_does_not_emit_dummy_row() -> None:
     # bcu_error.xml is a weekend response: status=0 plus a dummy 0.00 row.
     provider = BcuProvider()
     with pytest.raises(ValueError, match="status=0"):
-        provider.parse(_fixture("bcu_error.xml"), FETCHED_AT)
+        provider.parse(fixture("bcu_error.xml"), FETCHED_AT)

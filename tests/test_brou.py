@@ -6,18 +6,19 @@ flag image, and the two dollar rates being split into cash and ebanking.
 
 from __future__ import annotations
 
-from datetime import UTC, date, datetime
+from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
+from conftest import FETCHED_AT
 from cotizaciones_uy.models import Rate, RateType
-from cotizaciones_uy.providers.brou import BrouProvider, _money
+from cotizaciones_uy.providers.brou import BrouProvider
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
-FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
 
 
 def _fixture(name: str) -> str:
+    # BROU's fragment is latin-1, not utf-8; conftest's `fixture()` doesn't fit.
     return (FIXTURES / name).read_bytes().decode("latin-1")
 
 
@@ -61,9 +62,3 @@ def test_non_published_currencies_are_skipped() -> None:
     # The fragment also lists ARS, BRL, GBP, CHF, PYG and gold; none are emitted.
     currencies = {c for c, _ in _parsed()}
     assert currencies == {"USD", "EUR"}
-
-
-def test_money_handles_dot_decimal_too() -> None:
-    # A lone dot must not be stripped as if it were a thousands separator.
-    assert _money("39.00000") == Decimal("39.00000")
-    assert _money("2.070,00000") == Decimal("2070.00000")

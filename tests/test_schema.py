@@ -7,18 +7,17 @@ is worse. CI runs this test on every change.
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 import jsonschema
 import pytest
 
+from conftest import FETCHED_AT as GENERATED_AT
 from conftest import make_rate
 from cotizaciones_uy.serialize import build_payload
 
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "data" / "v1" / "schema.json"
-GENERATED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
 
 
 def _schema() -> dict[str, Any]:

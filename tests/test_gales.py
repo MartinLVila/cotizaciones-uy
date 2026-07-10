@@ -9,21 +9,18 @@ from __future__ import annotations
 
 from datetime import UTC, date, datetime
 from decimal import Decimal
-from pathlib import Path
 
+from conftest import fixture
 from cotizaciones_uy.models import RateType
-from cotizaciones_uy.providers.gales import GalesProvider, _money
+from cotizaciones_uy.providers.gales import GalesProvider
 
-FIXTURES = Path(__file__).resolve().parent / "fixtures"
+# Gales's live table is dated 2026-07-10, unlike the other fixtures'
+# 2026-07-09, so this can't share conftest's FETCHED_AT.
 FETCHED_AT = datetime(2026, 7, 10, 14, 0, 3, tzinfo=UTC)
 
 
-def _fixture(name: str) -> str:
-    return (FIXTURES / name).read_text(encoding="utf-8")
-
-
 def test_parses_usd_and_eur_from_the_live_table() -> None:
-    rates = GalesProvider().parse(_fixture("gales_ok.html"), FETCHED_AT)
+    rates = GalesProvider().parse(fixture("gales_ok.html"), FETCHED_AT)
     by_currency = {r.currency: r for r in rates}
 
     assert set(by_currency) == {"USD", "EUR"}
@@ -36,7 +33,7 @@ def test_parses_usd_and_eur_from_the_live_table() -> None:
 
 
 def test_quote_date_comes_from_the_live_table_not_the_stale_one() -> None:
-    rates = GalesProvider().parse(_fixture("gales_ok.html"), FETCHED_AT)
+    rates = GalesProvider().parse(fixture("gales_ok.html"), FETCHED_AT)
     # The stale hidden table is dated 10/05/2025; the live one, 10/07/2026.
     assert all(r.quoted_at == date(2026, 7, 10) for r in rates)
 
@@ -44,20 +41,14 @@ def test_quote_date_comes_from_the_live_table_not_the_stale_one() -> None:
 def test_comma_decimal_is_converted() -> None:
     eur = next(
         r
-        for r in GalesProvider().parse(_fixture("gales_ok.html"), FETCHED_AT)
+        for r in GalesProvider().parse(fixture("gales_ok.html"), FETCHED_AT)
         if r.currency == "EUR"
     )
     assert eur.buy == Decimal("44.50")
     assert eur.sell == Decimal("48.50")
 
 
-def test_money_handles_dot_decimal_too() -> None:
-    # A lone dot must not be stripped as if it were a thousands separator.
-    assert _money("39.00") == Decimal("39.00")
-    assert _money("39,00") == Decimal("39.00")
-
-
 def test_non_published_currencies_are_skipped() -> None:
     # The live table also lists PESO ARGENTINO and REAL; neither is emitted.
-    rates = GalesProvider().parse(_fixture("gales_ok.html"), FETCHED_AT)
+    rates = GalesProvider().parse(fixture("gales_ok.html"), FETCHED_AT)
     assert {r.currency for r in rates} == {"USD", "EUR"}

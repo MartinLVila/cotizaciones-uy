@@ -2,23 +2,16 @@
 
 from __future__ import annotations
 
-from datetime import UTC, date, datetime
+from datetime import date
 from decimal import Decimal
-from pathlib import Path
 
+from conftest import FETCHED_AT, fixture
 from cotizaciones_uy.models import RateType
-from cotizaciones_uy.providers.bbva import BbvaProvider, _money
-
-FIXTURES = Path(__file__).resolve().parent / "fixtures"
-FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
-
-
-def _fixture(name: str) -> str:
-    return (FIXTURES / name).read_text(encoding="utf-8")
+from cotizaciones_uy.providers.bbva import BbvaProvider
 
 
 def test_parses_usd_and_eur_cash() -> None:
-    rates = BbvaProvider().parse(_fixture("bbva_ok.html"), FETCHED_AT)
+    rates = BbvaProvider().parse(fixture("bbva_ok.html"), FETCHED_AT)
     by_currency = {r.currency: r for r in rates}
 
     assert set(by_currency) == {"USD", "EUR"}
@@ -34,15 +27,8 @@ def test_parses_usd_and_eur_cash() -> None:
 def test_comma_decimal_is_converted() -> None:
     eur = next(
         r
-        for r in BbvaProvider().parse(_fixture("bbva_ok.html"), FETCHED_AT)
+        for r in BbvaProvider().parse(fixture("bbva_ok.html"), FETCHED_AT)
         if r.currency == "EUR"
     )
     assert eur.buy == Decimal("41.23")
     assert eur.sell == Decimal("49.77")
-
-
-def test_money_handles_dot_decimal_too() -> None:
-    # The page has been observed to serve amounts as "41.23" instead of the
-    # usual "41,23"; a lone dot must not be stripped as a thousands separator.
-    assert _money("41.23") == Decimal("41.23")
-    assert _money("41,23") == Decimal("41.23")

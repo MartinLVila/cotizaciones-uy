@@ -4,13 +4,10 @@ where every provider fails refuses to publish.
 
 from __future__ import annotations
 
-from datetime import UTC, datetime
-
-from conftest import BoomProvider, OkProvider
+from conftest import FETCHED_AT as GENERATED_AT
+from conftest import BoomProvider, OkProvider, make_rate
 from cotizaciones_uy import pipeline
 from cotizaciones_uy.serialize import build_payload
-
-GENERATED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
 
 
 def test_zero_providers_publishes_empty_payload() -> None:
@@ -42,8 +39,6 @@ def test_all_providers_fail_does_not_publish() -> None:
 
 
 def test_rates_are_sorted_by_institution_then_currency() -> None:
-    from conftest import make_rate
-
     rates = [
         make_rate(institution="zeta", currency="USD"),
         make_rate(institution="alpha", currency="USD"),

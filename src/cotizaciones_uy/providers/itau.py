@@ -16,13 +16,13 @@ tests/fixtures/itau_ok.xml. Things to watch:
 
 from __future__ import annotations
 
-import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from decimal import Decimal
 
 from ..models import Rate, RateType
 from ..provider import Provider
+from ._http import fetch_text
 
 _URL = "https://www.itau.com.uy/inst/aci/cotiz.xml"
 
@@ -42,11 +42,7 @@ class ItauProvider(Provider):
     rate_type = RateType.CASH
 
     def fetch(self) -> str:
-        headers = {"User-Agent": "cotizaciones-uy"}
-        request = urllib.request.Request(_URL, headers=headers)
-        with urllib.request.urlopen(request, timeout=_TIMEOUT) as response:  # noqa: S310 - fixed https URL
-            payload: bytes = response.read()
-        return payload.decode("utf-8")
+        return fetch_text(_URL, _TIMEOUT)
 
     def parse(self, raw: str, fetched_at: datetime) -> list[Rate]:
         root = ET.fromstring(raw)

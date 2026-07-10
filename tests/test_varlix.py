@@ -6,23 +6,16 @@ Covers the comma decimal separator, mapping the Spanish display names to ISO
 
 from __future__ import annotations
 
-from datetime import UTC, date, datetime
+from datetime import date
 from decimal import Decimal
-from pathlib import Path
 
+from conftest import FETCHED_AT, fixture
 from cotizaciones_uy.models import RateType
-from cotizaciones_uy.providers.varlix import VarlixProvider, _money
-
-FIXTURES = Path(__file__).resolve().parent / "fixtures"
-FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
-
-
-def _fixture(name: str) -> str:
-    return (FIXTURES / name).read_text(encoding="utf-8")
+from cotizaciones_uy.providers.varlix import VarlixProvider
 
 
 def test_parses_usd_and_eur_cash() -> None:
-    rates = VarlixProvider().parse(_fixture("varlix_ok.html"), FETCHED_AT)
+    rates = VarlixProvider().parse(fixture("varlix_ok.html"), FETCHED_AT)
     by_currency = {r.currency: r for r in rates}
 
     assert set(by_currency) == {"USD", "EUR"}
@@ -38,20 +31,14 @@ def test_parses_usd_and_eur_cash() -> None:
 def test_comma_decimal_is_converted() -> None:
     eur = next(
         r
-        for r in VarlixProvider().parse(_fixture("varlix_ok.html"), FETCHED_AT)
+        for r in VarlixProvider().parse(fixture("varlix_ok.html"), FETCHED_AT)
         if r.currency == "EUR"
     )
     assert eur.buy == Decimal("44.45")
     assert eur.sell == Decimal("48.45")
 
 
-def test_money_handles_dot_decimal_too() -> None:
-    # A lone dot must not be stripped as if it were a thousands separator.
-    assert _money("38.90") == Decimal("38.90")
-    assert _money("38,90") == Decimal("38.90")
-
-
 def test_non_published_currencies_are_skipped() -> None:
     # The fixture also lists Peso Argentino and Real; neither is emitted.
-    rates = VarlixProvider().parse(_fixture("varlix_ok.html"), FETCHED_AT)
+    rates = VarlixProvider().parse(fixture("varlix_ok.html"), FETCHED_AT)
     assert {r.currency for r in rates} == {"USD", "EUR"}

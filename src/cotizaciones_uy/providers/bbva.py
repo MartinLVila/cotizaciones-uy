@@ -6,7 +6,8 @@ URL, so no session token or client-side rendering is involved. Verified live on
 
 Notes:
 
-* amounts use a comma decimal separator ("41,23");
+* amounts use a comma decimal separator ("41,23"), though the page has been
+  observed to serve dot-decimal too ("41.23"); see `_money.py`;
 * the currency cells already hold ISO 4217 codes (padded with a space);
 * the table has no quote date, so `quoted_at` is the date we fetched.
 """
@@ -14,12 +15,12 @@ Notes:
 from __future__ import annotations
 
 import re
-import urllib.request
 from datetime import datetime
-from decimal import Decimal
 
 from ..models import Rate, RateType
 from ..provider import Provider
+from ._http import fetch_text
+from ._money import parse_comma_decimal
 
 _URL = "https://bbvanet.bbva.com.uy/WebInst/Cotizaciones"
 _TIMEOUT = 30
@@ -41,11 +42,7 @@ class BbvaProvider(Provider):
     rate_type = RateType.CASH
 
     def fetch(self) -> str:
-        headers = {"User-Agent": "cotizaciones-uy"}
-        request = urllib.request.Request(_URL, headers=headers)
-        with urllib.request.urlopen(request, timeout=_TIMEOUT) as response:  # noqa: S310 - fixed https URL
-            payload: bytes = response.read()
-        return payload.decode("utf-8")
+        return fetch_text(_URL, _TIMEOUT)
 
     def parse(self, raw: str, fetched_at: datetime) -> list[Rate]:
         quoted_at = fetched_at.date()
@@ -59,8 +56,8 @@ class BbvaProvider(Provider):
                     institution=self.slug,
                     institution_name=self.name,
                     currency=currency,
-                    buy=_money(buy),
-                    sell=_money(sell),
+                    buy=parse_comma_decimal(buy),
+                    sell=parse_comma_decimal(sell),
                     rate_type=self.rate_type,
                     quoted_at=quoted_at,
                     fetched_at=fetched_at,
@@ -68,15 +65,3 @@ class BbvaProvider(Provider):
                 )
             )
         return rates
-
-
-def _money(text: str) -> Decimal:
-    """Parse a BBVA amount: usually comma-decimal ("41,23"), but the page has
-    been observed to serve dot-decimal too ("41.23"). A dot is only a
-    thousands separator when a comma is also present to mark the decimal
-    point; a lone dot is left alone rather than stripped.
-    """
-    text = text.strip()
-    if "," in text:
-        text = text.replace(".", "").replace(",", ".")
-    return Decimal(text)

@@ -6,12 +6,18 @@ from __future__ import annotations
 
 from datetime import UTC, date, datetime
 from decimal import Decimal
+from pathlib import Path
 
 from cotizaciones_uy.models import Rate, RateType
 from cotizaciones_uy.provider import Provider
 
+FIXTURES = Path(__file__).resolve().parent / "fixtures"
 FETCHED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
 QUOTED_AT = date(2026, 7, 8)
+
+
+def fixture(name: str) -> str:
+    return (FIXTURES / name).read_text(encoding="utf-8")
 
 
 def make_rate(

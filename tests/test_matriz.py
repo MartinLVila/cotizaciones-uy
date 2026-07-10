@@ -9,21 +9,18 @@ from __future__ import annotations
 
 from datetime import UTC, date, datetime
 from decimal import Decimal
-from pathlib import Path
 
+from conftest import fixture
 from cotizaciones_uy.models import RateType
 from cotizaciones_uy.providers.matriz import MatrizProvider
 
-FIXTURES = Path(__file__).resolve().parent / "fixtures"
+# Matches the date baked into matriz_ok.html's fixture context (not a real
+# quote date; the board has none), so this can't share conftest's FETCHED_AT.
 FETCHED_AT = datetime(2026, 7, 10, 14, 0, 3, tzinfo=UTC)
 
 
-def _fixture(name: str) -> str:
-    return (FIXTURES / name).read_text(encoding="utf-8")
-
-
 def test_parses_usd_and_eur_cash() -> None:
-    rates = MatrizProvider().parse(_fixture("matriz_ok.html"), FETCHED_AT)
+    rates = MatrizProvider().parse(fixture("matriz_ok.html"), FETCHED_AT)
     by_currency = {r.currency: r for r in rates}
 
     assert set(by_currency) == {"USD", "EUR"}
@@ -39,7 +36,7 @@ def test_parses_usd_and_eur_cash() -> None:
 def test_dot_decimal_needs_no_conversion() -> None:
     eur = next(
         r
-        for r in MatrizProvider().parse(_fixture("matriz_ok.html"), FETCHED_AT)
+        for r in MatrizProvider().parse(fixture("matriz_ok.html"), FETCHED_AT)
         if r.currency == "EUR"
     )
     assert eur.buy == Decimal("44.50")
@@ -48,11 +45,11 @@ def test_dot_decimal_needs_no_conversion() -> None:
 
 def test_duplicated_board_is_not_duplicated_in_output() -> None:
     # The fixture renders the same board twice (desktop and mobile layouts).
-    rates = MatrizProvider().parse(_fixture("matriz_ok.html"), FETCHED_AT)
+    rates = MatrizProvider().parse(fixture("matriz_ok.html"), FETCHED_AT)
     assert len(rates) == 2
 
 
 def test_non_published_currencies_are_skipped() -> None:
     # The fixture also lists Peso Argentino and Real; neither is emitted.
-    rates = MatrizProvider().parse(_fixture("matriz_ok.html"), FETCHED_AT)
+    rates = MatrizProvider().parse(fixture("matriz_ok.html"), FETCHED_AT)
     assert {r.currency for r in rates} == {"USD", "EUR"}

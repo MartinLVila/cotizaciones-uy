@@ -29,10 +29,10 @@ import re
 import urllib.parse
 import urllib.request
 from datetime import datetime
-from decimal import Decimal
 
 from ..models import Rate, RateType
 from ..provider import Provider
+from ._money import parse_comma_decimal
 
 _PAGE = "https://www.brou.com.uy/web/guest/cotizaciones"
 _RENDER = "https://www.brou.com.uy/c/portal/render_portlet"
@@ -114,8 +114,8 @@ class BrouProvider(Provider):
                     institution=self.slug,
                     institution_name=self.name,
                     currency=currency,
-                    buy=_money(values[0]),
-                    sell=_money(values[1]),
+                    buy=parse_comma_decimal(values[0]),
+                    sell=parse_comma_decimal(values[1]),
                     rate_type=rate_type,
                     quoted_at=quoted_at,
                     fetched_at=fetched_at,
@@ -132,14 +132,3 @@ class BrouProvider(Provider):
         if currency == "EUR":
             return RateType.CASH
         return None
-
-
-def _money(text: str) -> Decimal:
-    """Parse a BROU amount: dot thousands separator, comma decimal separator
-    ("2.070,00000"). A dot is only treated as a thousands separator when a
-    comma is also present to mark the decimal point.
-    """
-    text = text.strip()
-    if "," in text:
-        text = text.replace(".", "").replace(",", ".")
-    return Decimal(text)

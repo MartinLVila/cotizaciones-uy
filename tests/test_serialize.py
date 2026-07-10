@@ -5,13 +5,12 @@ the JSON round-trip untouched.
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
+from datetime import datetime
 from decimal import Decimal
 
+from conftest import FETCHED_AT as GENERATED_AT
 from conftest import make_rate
 from cotizaciones_uy.serialize import build_payload, dump_json
-
-GENERATED_AT = datetime(2026, 7, 9, 14, 0, 3, tzinfo=UTC)
 
 
 def test_money_is_emitted_as_string() -> None:
