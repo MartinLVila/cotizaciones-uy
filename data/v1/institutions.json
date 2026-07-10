@@ -30,6 +30,12 @@
       "name": "Varlix",
       "rate_type": "cash",
       "homepage": "https://www.varlix.com.uy/"
+    },
+    {
+      "slug": "gales",
+      "name": "Gales",
+      "rate_type": "cash",
+      "homepage": "https://www.gales.com.uy/"
     }
   ]
 }
