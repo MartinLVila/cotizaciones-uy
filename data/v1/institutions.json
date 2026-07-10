@@ -36,6 +36,12 @@
       "name": "Gales",
       "rate_type": "cash",
       "homepage": "https://www.gales.com.uy/"
+    },
+    {
+      "slug": "matriz",
+      "name": "Cambio Matriz",
+      "rate_type": "cash",
+      "homepage": "https://www.cambiomatriz.com.uy/"
     }
   ]
 }

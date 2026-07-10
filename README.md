@@ -24,12 +24,14 @@ Every design decision resolves in favor of that consumer.
 | BBVA | `bbva` | `cash` | Verified locally (USD, EUR); blocked by Akamai from CI, so it fails the hourly run |
 | Varlix | `varlix` | `cash` | Verified against the live page (USD, EUR) |
 | Gales | `gales` | `cash` | Verified against the live page (USD, EUR) |
+| Cambio Matriz | `matriz` | `cash` | Verified against the live page (USD, EUR) |
 
-Current milestone: **M8: Gales.** The dataset is live on GitHub Pages, refreshed
-hourly, and now covers six institutions: the BCU official reference, plus
-Itaú, BROU, BBVA, Varlix, and Gales retail rates. Each parser is verified
-against the live source and tested offline. `bbva` is a known exception: it
-works from a residential IP but not from CI (see below).
+Current milestone: **M9: Cambio Matriz.** The dataset is live on GitHub Pages,
+refreshed hourly, and now covers seven institutions: the BCU official
+reference, plus Itaú, BROU, BBVA, Varlix, Gales, and Cambio Matriz retail
+rates. Each parser is verified against the live source and tested offline.
+`bbva` is a known exception: it works from a residential IP but not from CI
+(see below).
 
 ### Notes on the data
 
@@ -69,6 +71,13 @@ works from a residential IP but not from CI (see below).
   rather than an ISO code, mapped the same way as `varlix`. Unlike the other
   retail boards, Gales's live table carries a real quote date, which we parse
   instead of defaulting to the fetch date.
+- The `matriz` provider publishes Cambio Matriz's retail board (`cash`)
+  rates, also from its homepage HTML. Unlike the other retail boards here,
+  amounts use a plain dot decimal separator, not a comma. The page renders
+  the same board twice (desktop and mobile layouts), so parsing keeps only
+  the first occurrence of each currency. The board itself is scoped to one
+  branch ("Pizarra válida únicamente en nuestra agencia POCITOS"), not
+  necessarily Cambio Matriz's rate company-wide.
 
 ## The data
 

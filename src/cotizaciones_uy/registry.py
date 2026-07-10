@@ -11,6 +11,7 @@ from .providers.bcu import BcuProvider
 from .providers.brou import BrouProvider
 from .providers.gales import GalesProvider
 from .providers.itau import ItauProvider
+from .providers.matriz import MatrizProvider
 from .providers.varlix import VarlixProvider
 
 PROVIDERS: list[Provider] = [
@@ -19,5 +20,6 @@ PROVIDERS: list[Provider] = [
     BrouProvider(),
     GalesProvider(),
     ItauProvider(),
+    MatrizProvider(),
     VarlixProvider(),
 ]

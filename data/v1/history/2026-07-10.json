@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-10T17:09:56Z",
+  "generated_at": "2026-07-10T17:21:24Z",
   "rates": [
     {
       "institution": "bbva",
@@ -10,7 +10,7 @@
       "sell": "4977",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://bbvanet.bbva.com.uy/WebInst/Cotizaciones"
     },
     {
@@ -21,7 +21,7 @@
       "sell": "4200",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://bbvanet.bbva.com.uy/WebInst/Cotizaciones"
     },
     {
@@ -32,7 +32,7 @@
       "sell": "45.986405",
       "rate_type": "official",
       "quoted_at": "2026-07-09",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -43,7 +43,7 @@
       "sell": "40.219000",
       "rate_type": "official",
       "quoted_at": "2026-07-09",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -54,7 +54,7 @@
       "sell": "48.32000",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "41.30000",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "40.80000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -120,8 +120,30 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
+    },
+    {
+      "institution": "matriz",
+      "institution_name": "Cambio Matriz",
+      "currency": "EUR",
+      "buy": "44.50",
+      "sell": "48.50",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-10",
+      "fetched_at": "2026-07-10T17:21:24Z",
+      "source_url": "https://www.cambiomatriz.com.uy/"
+    },
+    {
+      "institution": "matriz",
+      "institution_name": "Cambio Matriz",
+      "currency": "USD",
+      "buy": "39.00",
+      "sell": "41.40",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-10",
+      "fetched_at": "2026-07-10T17:21:24Z",
+      "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
       "institution": "varlix",
@@ -131,7 +153,7 @@
       "sell": "48.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,7 +164,7 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-10T17:09:56Z",
+      "fetched_at": "2026-07-10T17:21:24Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
