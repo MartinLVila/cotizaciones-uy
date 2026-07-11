@@ -41,6 +41,20 @@ _DEFAULT_P_L_ID = "20593"
 _CURRENT_URL = "/web/guest/cotizaciones"
 _TIMEOUT = 30
 
+# Liferay portlet-render boilerplate: fixed for this portlet, never varies
+# per request. Only p_l_id, p_p_id, and p_p_auth are resolved per fetch.
+_STATIC_PARAMS = {
+    "p_p_lifecycle": "0",
+    "p_t_lifecycle": "0",
+    "p_p_state": "normal",
+    "p_p_mode": "view",
+    "p_p_col_id": "column-1",
+    "p_p_col_pos": "0",
+    "p_p_col_count": "2",
+    "p_p_isolated": "1",
+    "currentURL": _CURRENT_URL,
+}
+
 _ROW_SPLIT = re.compile(r"<tr\b", re.IGNORECASE)
 _ISO_RE = re.compile(r"/images/([A-Za-z]{3})\.png")
 _NAME_RE = re.compile(r'class="moneda">\s*([^<]+?)\s*<')
@@ -72,16 +86,8 @@ class BrouProvider(Provider):
         params = {
             "p_l_id": p_l_id.group(1) if p_l_id else _DEFAULT_P_L_ID,
             "p_p_id": _PORTLET_PREFIX + instance.group(1),
-            "p_p_lifecycle": "0",
-            "p_t_lifecycle": "0",
-            "p_p_state": "normal",
-            "p_p_mode": "view",
-            "p_p_col_id": "column-1",
-            "p_p_col_pos": "0",
-            "p_p_col_count": "2",
-            "p_p_isolated": "1",
-            "currentURL": _CURRENT_URL,
             "p_p_auth": auth.group(1),
+            **_STATIC_PARAMS,
         }
         request = urllib.request.Request(
             _RENDER + "?" + urllib.parse.urlencode(params),

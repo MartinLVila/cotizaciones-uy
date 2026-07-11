@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime
 from itertools import repeat
+from typing import NamedTuple
 
 from .models import Rate
 from .provider import Provider
@@ -37,13 +38,19 @@ class RunResult:
         return self.attempted == 0 or self.succeeded > 0
 
 
-def _run_one(provider: Provider, fetched_at: datetime) -> tuple[str, list[Rate] | str]:
-    """Fetch and parse one provider. Returns its rates, or an error string."""
+class _Outcome(NamedTuple):
+    slug: str
+    rates: list[Rate]
+    error: str | None
+
+
+def _run_one(provider: Provider, fetched_at: datetime) -> _Outcome:
+    """Fetch and parse one provider, isolating whatever goes wrong."""
     try:
         raw = provider.fetch()
-        return provider.slug, provider.parse(raw, fetched_at)
+        return _Outcome(provider.slug, provider.parse(raw, fetched_at), None)
     except Exception as exc:  # noqa: BLE001 - one bad provider must not break the run
-        return provider.slug, f"{type(exc).__name__}: {exc}"
+        return _Outcome(provider.slug, [], f"{type(exc).__name__}: {exc}")
 
 
 def run(providers: list[Provider], fetched_at: datetime) -> RunResult:
@@ -62,10 +69,10 @@ def run(providers: list[Provider], fetched_at: datetime) -> RunResult:
         return result
 
     with ThreadPoolExecutor(max_workers=len(providers)) as executor:
-        for slug, outcome in executor.map(_run_one, providers, repeat(fetched_at)):
-            if isinstance(outcome, str):
-                result.failures[slug] = outcome
+        for outcome in executor.map(_run_one, providers, repeat(fetched_at)):
+            if outcome.error is not None:
+                result.failures[outcome.slug] = outcome.error
             else:
-                result.rates.extend(outcome)
+                result.rates.extend(outcome.rates)
                 result.succeeded += 1
     return result

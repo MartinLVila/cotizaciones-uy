@@ -7,8 +7,7 @@ customer can actually transact at.
 Verified against the live document on 2026-07-09; the saved response is in
 tests/fixtures/itau_ok.xml. Things to watch:
 
-* amounts use a comma as the decimal separator ("38,90"), so we swap it for a
-  dot before building a Decimal;
+* amounts use a comma as the decimal separator ("38,90"); see `_money.py`;
 * the `moneda` codes are Itau's own and come padded ("US.D", "EUR "), and some
   entries are not foreign currencies at all (URGI is an index unit), so we map
   the codes we recognize to ISO 4217 ourselves and skip the rest.
@@ -23,6 +22,7 @@ from decimal import Decimal
 from ..models import Rate, RateType
 from ..provider import Provider
 from ._http import fetch_text
+from ._money import parse_comma_decimal
 
 _URL = "https://www.itau.com.uy/inst/aci/cotiz.xml"
 
@@ -73,7 +73,6 @@ class ItauProvider(Provider):
 
 
 def _money(text: str | None) -> Decimal:
-    """Parse an Itau amount, which uses a comma as the decimal separator."""
     if text is None:
         raise ValueError("missing amount")
-    return Decimal(text.strip().replace(",", "."))
+    return parse_comma_decimal(text)
