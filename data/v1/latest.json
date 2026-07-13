@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-13T10:22:32Z",
+  "generated_at": "2026-07-13T16:29:36Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "45.922002",
       "rate_type": "official",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,40 +21,40 @@
       "sell": "40.226000",
       "rate_type": "official",
       "quoted_at": "2026-07-10",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "EUR",
-      "buy": "43.57000",
-      "sell": "48.49000",
+      "buy": "43.75000",
+      "sell": "48.32000",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "USD",
-      "buy": "38.95000",
-      "sell": "41.45000",
+      "buy": "39.15000",
+      "sell": "41.35000",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "USD",
-      "buy": "39.45000",
-      "sell": "40.95000",
+      "buy": "39.65000",
+      "sell": "40.85000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,29 +76,29 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "EUR",
-      "buy": "43.70",
-      "sell": "48.30",
+      "buy": "43.60",
+      "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "USD",
-      "buy": "38.90",
-      "sell": "41.50",
+      "buy": "39.05",
+      "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,7 +120,7 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +131,7 @@
       "sell": "48.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,11 +142,11 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-13",
-      "fetched_at": "2026-07-13T10:22:32Z",
+      "fetched_at": "2026-07-13T16:29:36Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "HTTPError: HTTP Error 403: Forbidden"
+    "bbva": "TimeoutError: The read operation timed out"
   }
 }
