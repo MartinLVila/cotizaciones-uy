@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-20T09:57:27Z",
+  "generated_at": "2026-07-20T12:18:55Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "45.956122",
       "rate_type": "official",
       "quoted_at": "2026-07-17",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,7 +21,7 @@
       "sell": "40.189000",
       "rate_type": "official",
       "quoted_at": "2026-07-17",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -32,7 +32,7 @@
       "sell": "48.57000",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -43,7 +43,7 @@
       "sell": "41.45000",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -54,7 +54,7 @@
       "sell": "40.95000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,12 +120,33 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-20T09:57:27Z",
+      "fetched_at": "2026-07-20T12:18:55Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
+    },
+    {
+      "institution": "varlix",
+      "institution_name": "Varlix",
+      "currency": "EUR",
+      "buy": "44.60",
+      "sell": "48.60",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-20",
+      "fetched_at": "2026-07-20T12:18:55Z",
+      "source_url": "https://www.varlix.com.uy/"
+    },
+    {
+      "institution": "varlix",
+      "institution_name": "Varlix",
+      "currency": "USD",
+      "buy": "38.95",
+      "sell": "41.45",
+      "rate_type": "cash",
+      "quoted_at": "2026-07-20",
+      "fetched_at": "2026-07-20T12:18:55Z",
+      "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "HTTPError: HTTP Error 403: Forbidden",
-    "varlix": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+    "bbva": "HTTPError: HTTP Error 403: Forbidden"
   }
 }
