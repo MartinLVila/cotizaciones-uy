@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T17:14:37Z",
+  "generated_at": "2026-07-21T19:16:15Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "45.789576",
       "rate_type": "official",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,40 +21,40 @@
       "sell": "40.110000",
       "rate_type": "official",
       "quoted_at": "2026-07-20",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "EUR",
-      "buy": "43.60000",
-      "sell": "48.17000",
+      "buy": "43.52000",
+      "sell": "48.31000",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "USD",
-      "buy": "39.00000",
-      "sell": "41.20000",
+      "buy": "38.95000",
+      "sell": "41.35000",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "USD",
-      "buy": "39.50000",
-      "sell": "40.70000",
+      "buy": "39.45000",
+      "sell": "40.85000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "41.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "41.25",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,7 +120,7 @@
       "sell": "41.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +131,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,7 +142,7 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-21T17:14:37Z",
+      "fetched_at": "2026-07-21T19:16:15Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
