@@ -1,29 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T19:11:22Z",
+  "generated_at": "2026-07-22T21:03:04Z",
   "rates": [
-    {
-      "institution": "bcu",
-      "institution_name": "Banco Central del Uruguay",
-      "currency": "EUR",
-      "buy": "45.775063",
-      "sell": "45.775063",
-      "rate_type": "official",
-      "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-22T19:11:22Z",
-      "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
-    },
-    {
-      "institution": "bcu",
-      "institution_name": "Banco Central del Uruguay",
-      "currency": "USD",
-      "buy": "40.143000",
-      "sell": "40.143000",
-      "rate_type": "official",
-      "quoted_at": "2026-07-21",
-      "fetched_at": "2026-07-22T19:11:22Z",
-      "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
-    },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
@@ -32,7 +10,7 @@
       "sell": "48.29000",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -43,7 +21,7 @@
       "sell": "41.30000",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -54,7 +32,7 @@
       "sell": "40.80000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +43,7 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,7 +54,7 @@
       "sell": "41.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -87,18 +65,18 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "USD",
-      "buy": "39.00",
-      "sell": "41.30",
+      "buy": "38.85",
+      "sell": "41.35",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +87,7 @@
       "sell": "48.70",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,7 +98,7 @@
       "sell": "41.35",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +109,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,11 +120,12 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-22T19:11:22Z",
+      "fetched_at": "2026-07-22T21:03:04Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "HTTPError: HTTP Error 403: Forbidden"
+    "bbva": "HTTPError: HTTP Error 403: Forbidden",
+    "bcu": "ValueError: BCU awsultimocierre returned no Fecha"
   }
 }
