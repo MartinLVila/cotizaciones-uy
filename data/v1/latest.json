@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-23T15:05:58Z",
+  "generated_at": "2026-07-23T17:18:40Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "45.798049",
       "rate_type": "official",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,7 +21,7 @@
       "sell": "40.135000",
       "rate_type": "official",
       "quoted_at": "2026-07-22",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -32,7 +32,7 @@
       "sell": "48.11000",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -43,7 +43,7 @@
       "sell": "41.30000",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -54,29 +54,29 @@
       "sell": "40.80000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "gales",
       "institution_name": "Gales",
       "currency": "EUR",
-      "buy": "44.30",
-      "sell": "48.30",
+      "buy": "44.20",
+      "sell": "48.20",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
       "institution": "gales",
       "institution_name": "Gales",
       "currency": "USD",
-      "buy": "38.90",
-      "sell": "41.30",
+      "buy": "39.00",
+      "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "48.11",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "41.35",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,18 +109,18 @@
       "sell": "48.70",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
       "institution": "matriz",
       "institution_name": "Cambio Matriz",
       "currency": "USD",
-      "buy": "38.95",
-      "sell": "41.35",
+      "buy": "39.00",
+      "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +131,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,7 +142,7 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-23",
-      "fetched_at": "2026-07-23T15:05:58Z",
+      "fetched_at": "2026-07-23T17:18:40Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
