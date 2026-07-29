@@ -1,60 +1,60 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-29T18:04:07Z",
+  "generated_at": "2026-07-29T20:10:00Z",
   "rates": [
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
       "currency": "EUR",
-      "buy": "45.791682",
-      "sell": "45.791682",
+      "buy": "46.059357",
+      "sell": "46.059357",
       "rate_type": "official",
-      "quoted_at": "2026-07-28",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "quoted_at": "2026-07-29",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
       "currency": "USD",
-      "buy": "40.214000",
-      "sell": "40.214000",
+      "buy": "40.223000",
+      "sell": "40.223000",
       "rate_type": "official",
-      "quoted_at": "2026-07-28",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "quoted_at": "2026-07-29",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "EUR",
-      "buy": "43.68000",
-      "sell": "48.24000",
+      "buy": "43.76000",
+      "sell": "48.57000",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "USD",
-      "buy": "39.15000",
-      "sell": "41.35000",
+      "buy": "39.00000",
+      "sell": "41.40000",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "brou",
       "institution_name": "Banco de la Republica Oriental del Uruguay",
       "currency": "USD",
-      "buy": "39.65000",
-      "sell": "40.85000",
+      "buy": "39.50000",
+      "sell": "40.90000",
       "rate_type": "ebanking",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,29 +76,29 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "EUR",
-      "buy": "43.50",
-      "sell": "48.30",
+      "buy": "43.65",
+      "sell": "48.25",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "USD",
-      "buy": "39.00",
-      "sell": "41.40",
+      "buy": "38.90",
+      "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,7 +120,7 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +131,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,7 +142,7 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-07-29",
-      "fetched_at": "2026-07-29T18:04:07Z",
+      "fetched_at": "2026-07-29T20:10:00Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
