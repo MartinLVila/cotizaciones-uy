@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-01T01:36:16Z",
+  "generated_at": "2026-09-01T07:12:30Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "46.743406",
       "rate_type": "official",
       "quoted_at": "2026-08-31",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,41 +21,8 @@
       "sell": "40.244000",
       "rate_type": "official",
       "quoted_at": "2026-08-31",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
-    },
-    {
-      "institution": "brou",
-      "institution_name": "Banco de la Republica Oriental del Uruguay",
-      "currency": "EUR",
-      "buy": "44.45000",
-      "sell": "49.34000",
-      "rate_type": "cash",
-      "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
-      "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
-    },
-    {
-      "institution": "brou",
-      "institution_name": "Banco de la Republica Oriental del Uruguay",
-      "currency": "USD",
-      "buy": "39.05000",
-      "sell": "41.45000",
-      "rate_type": "cash",
-      "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
-      "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
-    },
-    {
-      "institution": "brou",
-      "institution_name": "Banco de la Republica Oriental del Uruguay",
-      "currency": "USD",
-      "buy": "39.55000",
-      "sell": "40.95000",
-      "rate_type": "ebanking",
-      "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
-      "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
       "institution": "gales",
@@ -65,7 +32,7 @@
       "sell": "49.30",
       "rate_type": "cash",
       "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,7 +43,7 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -87,7 +54,7 @@
       "sell": "49.35",
       "rate_type": "cash",
       "quoted_at": "2026-08-31",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -98,7 +65,7 @@
       "sell": "41.60",
       "rate_type": "cash",
       "quoted_at": "2026-08-31",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +76,7 @@
       "sell": "49.80",
       "rate_type": "cash",
       "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,7 +87,7 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +98,7 @@
       "sell": "49.20",
       "rate_type": "cash",
       "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,11 +109,12 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-09-01",
-      "fetched_at": "2026-09-01T01:36:16Z",
+      "fetched_at": "2026-09-01T07:12:30Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "HTTPError: HTTP Error 403: Forbidden"
+    "bbva": "HTTPError: HTTP Error 403: Forbidden",
+    "brou": "URLError: <urlopen error timed out>"
   }
 }
