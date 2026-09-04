@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-04T10:31:59Z",
+  "generated_at": "2026-09-04T14:45:29Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "46.809399",
       "rate_type": "official",
       "quoted_at": "2026-09-03",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,7 +21,7 @@
       "sell": "40.235000",
       "rate_type": "official",
       "quoted_at": "2026-09-03",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -32,7 +32,7 @@
       "sell": "49.41000",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -43,7 +43,7 @@
       "sell": "41.45000",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -54,7 +54,7 @@
       "sell": "40.95000",
       "rate_type": "ebanking",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.brou.com.uy/web/guest/cotizaciones"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "49.30",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -87,18 +87,18 @@
       "sell": "49.40",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "USD",
-      "buy": "38.90",
-      "sell": "41.50",
+      "buy": "39.10",
+      "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "49.80",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -120,7 +120,7 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -131,7 +131,7 @@
       "sell": "49.20",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -142,7 +142,7 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-09-04",
-      "fetched_at": "2026-09-04T10:31:59Z",
+      "fetched_at": "2026-09-04T14:45:29Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
