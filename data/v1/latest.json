@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-26T14:03:32Z",
+  "generated_at": "2026-09-26T18:16:47Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "46.040561",
       "rate_type": "official",
       "quoted_at": "2026-09-25",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,7 +21,7 @@
       "sell": "40.390000",
       "rate_type": "official",
       "quoted_at": "2026-09-25",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -32,7 +32,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -43,7 +43,7 @@
       "sell": "41.60",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -54,7 +54,7 @@
       "sell": "48.59",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -65,7 +65,7 @@
       "sell": "41.66",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "49.00",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "41.60",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "48.20",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -109,7 +109,7 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-09-26",
-      "fetched_at": "2026-09-26T14:03:32Z",
+      "fetched_at": "2026-09-26T18:16:47Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
