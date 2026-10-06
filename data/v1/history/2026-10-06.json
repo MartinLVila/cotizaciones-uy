@@ -1,27 +1,27 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-06T17:52:46Z",
+  "generated_at": "2026-10-06T22:16:55Z",
   "rates": [
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
       "currency": "EUR",
-      "buy": "44.963178",
-      "sell": "44.963178",
+      "buy": "45.230933",
+      "sell": "45.230933",
       "rate_type": "official",
-      "quoted_at": "2026-10-05",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "quoted_at": "2026-10-06",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
       "currency": "USD",
-      "buy": "40.092000",
-      "sell": "40.092000",
+      "buy": "40.166000",
+      "sell": "40.166000",
       "rate_type": "official",
-      "quoted_at": "2026-10-05",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "quoted_at": "2026-10-06",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -32,7 +32,7 @@
       "sell": "47.80",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -43,7 +43,7 @@
       "sell": "41.35",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -54,18 +54,18 @@
       "sell": "47.65",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "USD",
-      "buy": "39.00",
-      "sell": "41.30",
+      "buy": "38.80",
+      "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "48.60",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "41.35",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "47.80",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -109,12 +109,12 @@
       "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-10-06",
-      "fetched_at": "2026-10-06T17:52:46Z",
+      "fetched_at": "2026-10-06T22:16:55Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "TimeoutError: The read operation timed out",
+    "bbva": "HTTPError: HTTP Error 403: Forbidden",
     "brou": "ValueError: BROU: could not find render token or portlet instance"
   }
 }
