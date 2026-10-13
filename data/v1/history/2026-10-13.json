@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-13T13:30:23Z",
+  "generated_at": "2026-10-13T20:03:00Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "45.014117",
       "rate_type": "official",
       "quoted_at": "2026-10-09",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,18 +21,40 @@
       "sell": "40.184000",
       "rate_type": "official",
       "quoted_at": "2026-10-09",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
+    },
+    {
+      "institution": "gales",
+      "institution_name": "Gales",
+      "currency": "EUR",
+      "buy": "43.80",
+      "sell": "47.80",
+      "rate_type": "cash",
+      "quoted_at": "2026-10-13",
+      "fetched_at": "2026-10-13T20:03:00Z",
+      "source_url": "https://www.gales.com.uy/"
+    },
+    {
+      "institution": "gales",
+      "institution_name": "Gales",
+      "currency": "USD",
+      "buy": "38.95",
+      "sell": "41.35",
+      "rate_type": "cash",
+      "quoted_at": "2026-10-13",
+      "fetched_at": "2026-10-13T20:03:00Z",
+      "source_url": "https://www.gales.com.uy/"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "EUR",
-      "buy": "42.68",
-      "sell": "47.61",
+      "buy": "42.80",
+      "sell": "47.50",
       "rate_type": "cash",
       "quoted_at": "2026-10-13",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -43,7 +65,7 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-10-13",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -54,18 +76,18 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-10-13",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
       "institution": "matriz",
       "institution_name": "Cambio Matriz",
       "currency": "USD",
-      "buy": "38.95",
-      "sell": "41.35",
+      "buy": "39.00",
+      "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-10-13",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -76,7 +98,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-10-13",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -87,13 +109,12 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-10-13",
-      "fetched_at": "2026-10-13T13:30:23Z",
+      "fetched_at": "2026-10-13T20:03:00Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
     "bbva": "HTTPError: HTTP Error 403: Forbidden",
-    "brou": "ValueError: BROU: could not find render token or portlet instance",
-    "gales": "HTTPError: HTTP Error 502: Bad Gateway"
+    "brou": "ValueError: BROU: could not find render token or portlet instance"
   }
 }
