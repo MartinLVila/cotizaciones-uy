@@ -1,71 +1,71 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-15T17:59:15Z",
+  "generated_at": "2026-10-15T21:14:50Z",
   "rates": [
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
       "currency": "EUR",
-      "buy": "44.879234",
-      "sell": "44.879234",
+      "buy": "44.991335",
+      "sell": "44.991335",
       "rate_type": "official",
-      "quoted_at": "2026-10-14",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "quoted_at": "2026-10-15",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "bcu",
       "institution_name": "Banco Central del Uruguay",
       "currency": "USD",
-      "buy": "40.236000",
-      "sell": "40.236000",
+      "buy": "40.135000",
+      "sell": "40.135000",
       "rate_type": "official",
-      "quoted_at": "2026-10-14",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "quoted_at": "2026-10-15",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
       "institution": "gales",
       "institution_name": "Gales",
       "currency": "EUR",
-      "buy": "43.80",
-      "sell": "47.80",
+      "buy": "43.70",
+      "sell": "47.70",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
       "institution": "gales",
       "institution_name": "Gales",
       "currency": "USD",
-      "buy": "38.95",
-      "sell": "41.35",
+      "buy": "38.90",
+      "sell": "41.30",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "EUR",
-      "buy": "42.65",
+      "buy": "42.83",
       "sell": "47.30",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
       "institution": "itau",
       "institution_name": "Itau Uruguay",
       "currency": "USD",
-      "buy": "39.00",
-      "sell": "41.30",
+      "buy": "38.80",
+      "sell": "41.40",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -76,7 +76,7 @@
       "sell": "48.30",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -87,7 +87,7 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
@@ -98,7 +98,7 @@
       "sell": "48.50",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -109,12 +109,12 @@
       "sell": "41.45",
       "rate_type": "cash",
       "quoted_at": "2026-10-15",
-      "fetched_at": "2026-10-15T17:59:15Z",
+      "fetched_at": "2026-10-15T21:14:50Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "HTTPError: HTTP Error 403: Forbidden",
+    "bbva": "TimeoutError: The read operation timed out",
     "brou": "ValueError: BROU: could not find render token or portlet instance"
   }
 }
