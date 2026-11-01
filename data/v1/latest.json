@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T23:01:45Z",
+  "generated_at": "2026-11-01T04:12:46Z",
   "rates": [
     {
       "institution": "bcu",
@@ -10,7 +10,7 @@
       "sell": "44.877940",
       "rate_type": "official",
       "quoted_at": "2026-10-30",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -21,7 +21,7 @@
       "sell": "40.188000",
       "rate_type": "official",
       "quoted_at": "2026-10-30",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones"
     },
     {
@@ -31,8 +31,8 @@
       "buy": "43.50",
       "sell": "47.50",
       "rate_type": "cash",
-      "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "quoted_at": "2026-11-01",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -42,8 +42,8 @@
       "buy": "39.05",
       "sell": "41.45",
       "rate_type": "cash",
-      "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "quoted_at": "2026-11-01",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://www.gales.com.uy/"
     },
     {
@@ -54,7 +54,7 @@
       "sell": "47.40",
       "rate_type": "cash",
       "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
     },
     {
@@ -65,30 +65,8 @@
       "sell": "41.50",
       "rate_type": "cash",
       "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://www.itau.com.uy/inst/aci/cotiz.xml"
-    },
-    {
-      "institution": "matriz",
-      "institution_name": "Cambio Matriz",
-      "currency": "EUR",
-      "buy": "44.15",
-      "sell": "48.00",
-      "rate_type": "cash",
-      "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
-      "source_url": "https://www.cambiomatriz.com.uy/"
-    },
-    {
-      "institution": "matriz",
-      "institution_name": "Cambio Matriz",
-      "currency": "USD",
-      "buy": "39.00",
-      "sell": "41.40",
-      "rate_type": "cash",
-      "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
-      "source_url": "https://www.cambiomatriz.com.uy/"
     },
     {
       "institution": "varlix",
@@ -97,8 +75,8 @@
       "buy": "43.50",
       "sell": "47.50",
       "rate_type": "cash",
-      "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "quoted_at": "2026-11-01",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://www.varlix.com.uy/"
     },
     {
@@ -108,13 +86,14 @@
       "buy": "38.90",
       "sell": "41.40",
       "rate_type": "cash",
-      "quoted_at": "2026-10-31",
-      "fetched_at": "2026-10-31T23:01:45Z",
+      "quoted_at": "2026-11-01",
+      "fetched_at": "2026-11-01T04:12:46Z",
       "source_url": "https://www.varlix.com.uy/"
     }
   ],
   "failures": {
-    "bbva": "TimeoutError: The read operation timed out",
-    "brou": "ValueError: BROU: could not find render token or portlet instance"
+    "bbva": "HTTPError: HTTP Error 403: Forbidden",
+    "brou": "ValueError: BROU: could not find render token or portlet instance",
+    "matriz": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
   }
 }
